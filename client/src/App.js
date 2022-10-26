@@ -1,7 +1,7 @@
 import {Route, Routes, Navigate} from 'react-router-dom'
-import Main from './components/Main'
-import Signup from './components/Signup'
-import Login from './components/Login'
+import Main from './pages/Main'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
 
 const App = () => {
     const user = localStorage.getItem("token")
