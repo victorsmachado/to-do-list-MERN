@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { Paper, Checkbox, Button } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
 import "./checkbox.css";
 
 const Task = (Props) => {
