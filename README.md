@@ -1,7 +1,7 @@
 <h1 align="center"> to-do-list-MERN </h1>
 
 <p align="center">
-To do list React.js and Node.js.
+To do list React.js, Node.js, Express e MongoDB.
 </p>
 
 <p align="center">
