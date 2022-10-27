@@ -16,3 +16,22 @@
   flex-grow: 1;
   margin-left: 10px;
 }
+
+.deleteButton {
+  margin-left: 10px;
+}
+
+.deleteButton:hover {
+  background-color: red !important;
+  color: white;
+}
+
+.formControl {
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}

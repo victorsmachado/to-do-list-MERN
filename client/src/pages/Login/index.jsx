@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import InputForm from "../../components/inputs/InputForm";
-import GreenButton from "../../components/buttons/GreenButton";
+import BlackButton from "../../components/buttons/BlackButton";
 import WhiteButton from "../../components/buttons/WhiteButton";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -66,7 +66,7 @@ const Login = () => {
               name="senha"
               value={data.senha}
             />
-            <GreenButton text="Login" />
+            <BlackButton text="Login" />
           </form>
         </div>
         <div className={styles.right}>

@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const GreenButton = (Props) => {
+const BlackButton = (Props) => {
   return (
     <button type="submit" className={styles.btn}>
       {Props.text}
@@ -8,4 +8,4 @@ const GreenButton = (Props) => {
   );
 };
 
-export default GreenButton;
+export default BlackButton;

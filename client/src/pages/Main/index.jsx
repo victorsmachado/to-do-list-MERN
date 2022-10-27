@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 import { Paper, TextField, Button } from "@material-ui/core";
 import Task from "../../components/Task";
 import { useEffect } from "react";
-import title from "../../assets/img/todotitle.png";
+import title from "../../assets/img/teste.PNG";
 import {
   addTask,
   getTasks,
@@ -45,7 +45,7 @@ const Main = () => {
 
   //Alerta de sucesso quando a tarefa é deletada
   const notifySucessUpdate = () => {
-    toast.success("Notificação alterada com sucesso!", {
+    toast.success("Tarefa alterada com sucesso!", {
       position: toast.POSITION.TOP_CENTER,
     });
   };
@@ -130,7 +130,11 @@ const Main = () => {
   //Renderização da tela
   return (
     <div className={styles.App}>
-      <Paper elevation={3} className={styles.container}>
+      <Paper
+        elevation={3}
+        className={styles.container}
+        style={{ borderRadius: "10px" }}
+      >
         <div className={styles.main_container}>
           <nav className={styles.navbar}>
             <h1>Olá {user}</h1>
@@ -141,7 +145,7 @@ const Main = () => {
         </div>
         <div className={styles.heading}>
           <img
-            style={{ width: "100%", height: 100 }}
+            style={{ width: "60%", height: 100 }}
             src={title}
             alt="To do list"
           />
@@ -161,6 +165,7 @@ const Main = () => {
             placeholder="Adicionar nova tarefa"
           />
           <Button
+            className={styles.addButton}
             style={{
               height: "40px",
               width: "30%",

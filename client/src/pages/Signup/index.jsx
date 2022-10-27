@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import InputForm from "../../components/inputs/InputForm";
-import GreenButton from "../../components/buttons/GreenButton";
+import BlackButton from "../../components/buttons/BlackButton";
 import WhiteButton from "../../components/buttons/WhiteButton";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -115,7 +115,7 @@ const Signup = () => {
               value={data.endereco}
             />
 
-            <GreenButton text="Cadastrar" />
+            <BlackButton text="Cadastrar" />
           </form>
           <ToastContainer />
         </div>
