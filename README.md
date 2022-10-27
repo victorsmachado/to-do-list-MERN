@@ -44,5 +44,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-A to do list foi desenvolvida para teste, cumprindo todos os requisitos de desenvolvimento front end e back end.
+A to do list foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end.
 
