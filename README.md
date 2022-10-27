@@ -37,20 +37,20 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Node.js
 - MongoDB
 - JsonWebToken, bCrypt e Joi
-- express, cors e Mongoose
-- axios
-- material UI Core
-- material UI Styles
+- Express, cors e Mongoose
+- Axios
+- Material UI Core
+- Material UI Styles
 - Toastify
 
 ## 💻 Projeto
 
-A to do list foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end. 
+A **to do list** foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end. 
 O sistema possui:
 - Tela de login
 - Tela de cadastro
 - Lista de tarefas
-- Css inline e externo
+- CSS inline e externo
 - Um cadastro com validação
 - Um login gerando um jwt 
 - Um crud tanto das tarefas quanto dos usuários
