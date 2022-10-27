@@ -13,18 +13,19 @@ To do list React.js, Node.js, Express e MongoDB.
 
 <p align="center">
   <p>Login Page</p>
-![login](https://user-images.githubusercontent.com/48452755/198276871-ba948cb7-654e-438e-94a2-bc1cc9295c38.PNG)
+!(https://user-images.githubusercontent.com/48452755/198343353-54a56fab-0aca-4bf3-82d1-b792e1e7037d.PNG)
+
 </p>
 
 <p align="center">
   <p>Register Page</p>
- ![register](https://user-images.githubusercontent.com/48452755/198276889-a5eaf423-05f7-4f94-aec1-e7b453699304.PNG)
+ !(https://user-images.githubusercontent.com/48452755/198343381-083c21c8-4467-4286-8c72-264090d8d202.PNG)
+
 </p>
-
-
 <p align="center">
   <p>Main Page</p>
-  ![main](https://user-images.githubusercontent.com/48452755/198276486-fa2e7977-4e5f-4c03-a289-c9f55839852a.PNG)
+  !(https://user-images.githubusercontent.com/48452755/198343417-16a23685-8032-49e3-b744-cd49c18cfd46.PNG)
+
 
 </p>
 
