@@ -1,5 +1,5 @@
+//Lista de Imports
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import InputForm from "../../components/inputs/InputForm";
@@ -7,25 +7,30 @@ import GreenButton from "../../components/buttons/GreenButton";
 import WhiteButton from "../../components/buttons/WhiteButton";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { login } from "../../services/authServices";
 
+//Page Login
 const Login = () => {
+  //Definição dos estados
   const [data, setData] = useState({ email: "", senha: "" });
 
+  //Definição do alerta de erro TOASTIFY
   const notify = () => {
     toast.error("Email ou senha incorretos !", {
       position: toast.POSITION.TOP_CENTER,
     });
   };
 
+  //Função para alterar o estado do data quando o usuário digita
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
 
+  //Função para fazer o login
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/auth";
-      const { data: res } = await axios.post(url, data);
+      const { data: res } = await login(data);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("usuario", res.data.usuario);
       window.location = "/";
@@ -40,6 +45,7 @@ const Login = () => {
     }
   };
 
+  //Renderização da página
   return (
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>

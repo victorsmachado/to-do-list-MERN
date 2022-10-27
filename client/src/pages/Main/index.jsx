@@ -1,9 +1,11 @@
+//Lista de importações
 import React from "react";
 import { useState } from "react";
 import styles from "./styles.module.css";
 import { Paper, TextField, Button } from "@material-ui/core";
 import Task from "../../components/Task";
 import { useEffect } from "react";
+import title from "../../assets/img/todotitle.png";
 import {
   addTask,
   getTasks,
@@ -14,39 +16,46 @@ import {
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+//Pagina principal
 const Main = () => {
+  //Definição dos estados dos dados da to-do list
   const [user] = useState(localStorage.getItem("usuario"));
   const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState("");
 
+  //Função para definir os alertas de erro e sucesso com TOASTIFY
+  //Alerta de erro se servidor
   const notifyError = () => {
     toast.error("Server Error!", {
       position: toast.POSITION.TOP_CENTER,
     });
   };
+  //Alerta de sucesso quando a tarefa é salva
   const notifySucess = () => {
-    toast.success("Notificação salva com sucesso!", {
+    toast.success("Tarefa salva com sucesso!", {
       position: toast.POSITION.TOP_CENTER,
     });
   };
+  //Alerta de sucesso quando a tarefa é deletada
   const notifySucessDelete = () => {
-    toast.success("Notificação deletada com sucesso!", {
+    toast.success("Tarefa deletada com sucesso!", {
       position: toast.POSITION.TOP_CENTER,
     });
   };
 
+  //Alerta de sucesso quando a tarefa é deletada
   const notifySucessUpdate = () => {
     toast.success("Notificação alterada com sucesso!", {
       position: toast.POSITION.TOP_CENTER,
     });
   };
 
+  //Função para pegar as tarefas do servidor
+  //Foi usado use effect para que sempre que algo na tela ativar uma função ela possa reagir e ser executada
   useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await getTasks();
-        console.log(data);
-        console.log(typeof data);
         setTasks(data);
       } catch (error) {
         notifyError();
@@ -56,10 +65,12 @@ const Main = () => {
     fetchData().catch(console.error);
   }, []);
 
+  //Função para pegar os dados enquanto o usuário digita no input da task
   const handleChange = ({ currentTarget: input }) => {
     setCurrentTask(input.value);
   };
 
+  //Função para adicionar uma nova tarefa
   const handleSubmit = async () => {
     const originalTasks = tasks;
     try {
@@ -74,6 +85,7 @@ const Main = () => {
     }
   };
 
+  //Função para atualizar o status de uma tarefa
   const handleUpdate = async (currentTask) => {
     const originalTasks = tasks;
     try {
@@ -93,6 +105,7 @@ const Main = () => {
     }
   };
 
+  //Função para deletar uma tarefa
   const handleDelete = async (currentTask) => {
     const originalTasks = tasks;
     try {
@@ -107,11 +120,14 @@ const Main = () => {
       console.log(error);
     }
   };
+
+  //Função para fazer o logout, removendo os dados do usuario do localStorage
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
   };
 
+  //Renderização da tela
   return (
     <div className={styles.App}>
       <Paper elevation={3} className={styles.container}>
@@ -123,7 +139,13 @@ const Main = () => {
             </button>
           </nav>
         </div>
-        <div className={styles.heading}>TO-DO</div>
+        <div className={styles.heading}>
+          <img
+            style={{ width: "100%", height: 100 }}
+            src={title}
+            alt="To do list"
+          />
+        </div>
         <form
           onSubmit={handleSubmit}
           className={styles.flex}
@@ -136,11 +158,17 @@ const Main = () => {
             value={currentTask}
             required={true}
             onChange={handleChange}
-            placeholder="Add New TO-DO"
+            placeholder="Adicionar nova tarefa"
           />
           <Button
-            style={{ height: "40px" }}
-            color="primary"
+            style={{
+              height: "40px",
+              width: "30%",
+              backgroundColor: "#3bb19b",
+              color: "#fff",
+              marginLeft: "10px",
+              border: "none",
+            }}
             variant="outlined"
             type="submit"
           >
@@ -149,17 +177,17 @@ const Main = () => {
         </form>
         <div>
           {tasks.map((task) => {
-            console.log(task.user);
-            console.log(user);
             if (task.user === user) {
               return (
-                <Task
-                  id={task._id}
-                  completed={task.completed}
-                  onUpdate={() => handleUpdate(task._id)}
-                  task={task.task}
-                  onDelete={() => handleDelete(task._id)}
-                />
+                <li key={task._id} style={{ listStyleType: "none" }}>
+                  <Task
+                    id={task._id}
+                    completed={task.completed}
+                    onUpdate={() => handleUpdate(task._id)}
+                    task={task.task}
+                    onDelete={() => handleDelete(task._id)}
+                  />
+                </li>
               );
             }
             return <p>Adicione tarefas!</p>;

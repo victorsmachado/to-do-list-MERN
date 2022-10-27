@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
+//Definição das rotas da aplicação usando o react-router-dom routes e navigation
 const App = () => {
   const user = localStorage.getItem("token");
   return (

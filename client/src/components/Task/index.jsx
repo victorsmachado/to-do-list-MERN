@@ -3,7 +3,7 @@ import { Paper, Checkbox, Button } from "@material-ui/core";
 
 const Task = (Props) => {
   return (
-    <Paper key={Props.id} className={styles.task_container}>
+    <Paper id={Props.key} className={styles.task_container}>
       <Checkbox
         checked={Props.completed}
         onClick={Props.onUpdate}
@@ -12,7 +12,11 @@ const Task = (Props) => {
       <div className={Props.completed ? styles.line_through : styles.task}>
         {Props.task}
       </div>
-      <Button onClick={Props.onDelete} color="secondary">
+      <Button
+        onClick={Props.onDelete}
+        color="secondary"
+        style={{ border: "solid 1px red", borderRadius: "8px" }}
+      >
         Delete
       </Button>
     </Paper>
