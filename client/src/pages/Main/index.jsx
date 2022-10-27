@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 import { Paper, TextField, Button } from "@material-ui/core";
 import Task from "../../components/Task";
 import { useEffect } from "react";
-import title from "../../assets/img/teste.PNG";
+import title from "../../assets/img/title.PNG";
 import {
   addTask,
   getTasks,
