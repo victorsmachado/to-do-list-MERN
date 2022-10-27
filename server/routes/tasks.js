@@ -2,6 +2,9 @@ const Task = require("../models/task");
 const express = require("express");
 const router = express.Router();
 
+//Definição dos controladores das tasks
+
+//Rota de criação de task post
 router.post("/", async (req, res) => {
   try {
     const task = await new Task(req.body).save();
@@ -11,6 +14,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//Rota de listagem de tasks get
 router.get("/", async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -20,6 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//Rota de alteração do completed de uma task através do id put
 router.put("/:id", async (req, res) => {
   try {
     const task = await Task.findOneAndUpdate({ _id: req.params.id }, req.body);
@@ -29,6 +34,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//Rota de exclusão de uma task através do id delete
 router.delete("/:id", async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);

@@ -3,6 +3,9 @@ const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
 
+//Definição do schema dos usuarios
+//Os usuários possuem nome, email, senha, data de nascimento e endereço como requisitado
+
 const userSchema = new mongoose.Schema({
   nome: { type: String, required: true },
 

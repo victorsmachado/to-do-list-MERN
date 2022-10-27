@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//Conexão com o banco de dados, estou usando nesse caso um banco de dados local
 module.exports = async () => {
   try {
     const connectionParams = {

@@ -15,7 +15,7 @@ connection();
 app.use(express.json());
 app.use(cors());
 
-//routes
+//rotas
 app.use("/api/tasks", tasks);
 app.use("/api/users", users);
 app.use("/api/auth", auth);
