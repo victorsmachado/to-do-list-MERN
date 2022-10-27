@@ -45,5 +45,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-A to do list foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end.
+A to do list foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end. 
+O sistema possui:
+- Tela de login
+- Tela de cadastro
+- Lista de tarefas
+- Css inline e externo
+- Um cadastro com validação
+- Um login gerando um jwt 
+- Um crud tanto das tarefas quanto dos usuários
+- Alertas de erro e sucesso gerados com framework toastify
+- Endpoint getUserById requisitando header authorization com token jwt
 
