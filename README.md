@@ -5,6 +5,10 @@ To do list React.js, Node.js, Express e MongoDB.
 </p>
 
 <p align="center">
+Para iniciar o projeto instale os modulos tanto do app server quanto do app client e rode o npm start em ambas os apps.
+</p>
+
+<p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
