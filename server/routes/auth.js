@@ -18,14 +18,14 @@ router.post("/", async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (!user)
       //Se não encontrar retorna um erro 401 com a mensagem de erro
-      return res.status(401).send({ message: "Invalid Email or Password" });
+      return res.status(401).send({ message: "Email ou senha inválidos!" });
 
     //Compara a senha enviada com a senha do usuario encontrado no banco com criptografia do bcrypt
     const validPassword = await bcrypt.compare(req.body.senha, user.senha);
 
     if (!validPassword)
       //Se a senha não foi valida retorna um erro 401 com a mensagem de erro
-      return res.status(401).send({ message: "Invalid Email or Password" });
+      return res.status(401).send({ message: "Email ou senha inválidos!" });
 
     //Se a senha foi valida retorna um token de acesso
     const token = user.generateAuthToken();
@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
       usuario: user.nome,
     };
     //Retorna um token de acesso gerado randomicamente e o nome do usuario
-    res.status(200).send({ data: data, message: "logged in successfully" });
+    res.status(200).send({ data: data, message: "Login efetuado!" });
   } catch (error) {
     //Se ocorrer algum erro interno retorna um erro 500 com a mensagem de erro
     res.status(500).send({ message: "Internal Server Error" });

@@ -1,7 +1,7 @@
 <h1 align="center"> to-do-list-MERN </h1>
 
 <p align="center">
-To do list React.js, Node.js, Express e MongoDB.
+To do list React.js, Node.js, Express e MongoDB. Para rodar o software use npm install tanto no client quanto no servidor e depois npm start dentro das duas pastas
 </p>
 
 <p align="center">
@@ -26,7 +26,6 @@ To do list React.js, Node.js, Express e MongoDB.
   <p>Main Page</p>
   !(https://user-images.githubusercontent.com/48452755/198343417-16a23685-8032-49e3-b744-cd49c18cfd46.PNG)
 
-
 </p>
 
 ## 🚀 Tecnologias
@@ -45,15 +44,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-A **to do list** foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end. 
+A **to do list** foi desenvolvida para um teste, cumprindo todos os requisitos de desenvolvimento front end e back end.
 O sistema possui:
+
 - Tela de login
 - Tela de cadastro
 - Lista de tarefas
 - CSS inline e externo
 - Um cadastro com validação
-- Um login gerando um jwt 
+- Um login gerando um jwt
 - Um crud tanto das tarefas quanto dos usuários
 - Alertas de erro e sucesso gerados com framework toastify
 - Endpoint getUserById requisitando header authorization com token jwt
-
